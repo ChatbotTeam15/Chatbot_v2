@@ -16,12 +16,12 @@ namespace Microsoft.Bot.Sample.QnABot
         {
             /* Wait until the first message is received from the conversation and call MessageReceviedAsync 
             *  to process that message. */
+            await context.PostAsync("What would you like to know about the BCIS papers?");
             context.Wait(this.MessageReceivedAsync);
         }
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
-            await context.PostAsync("What would you like to know about the BCIS papers?");
             /* When MessageReceivedAsync is called, it's passed an IAwaitable<IMessageActivity>. To get the message,
             *  await the result. */
             var message = await result;
