@@ -21,7 +21,7 @@ namespace Microsoft.Bot.Sample.QnABot
             "If I take a < specific paper > what other papers should I take next for < the software  dev major in the BCIS >\n"+
              "What would be a suggested set of papers for a < the software  dev  major in the BCIS >?\n" +
              "Which papers are suitable for a < specific job > (like web developer, business analyst, software engineer, scrum master)\n" +
-            "If I have failed<specific paper> what papers can I still take ? (or how does this restrict what papers I can take)\n" +
+            "If I have failed<specific paper> what papers can I still take ? \n" +
             "What semesters is < specific paper > offered in < specific year > ");
             //context.Wait(this.MessageReceivedAsync);
             context.Wait(this.MessageReceivedAsync);
