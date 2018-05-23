@@ -16,7 +16,7 @@ namespace Microsoft.Bot.Sample.QnABot
         {
             /* Wait until the first message is received from the conversation and call MessageReceviedAsync 
             *  to process that message. */
-            await context.PostAsync("What would you like to know about the BCIS papers?");
+            context.PostAsync("What would you like to know about the BCIS papers?");
             context.Wait(this.MessageReceivedAsync);
         }
 
