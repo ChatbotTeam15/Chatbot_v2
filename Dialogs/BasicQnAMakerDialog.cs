@@ -21,6 +21,7 @@ namespace Microsoft.Bot.Sample.QnABot
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
+            await context.PostAsync("What would you like to know about the BCIS papers?");
             /* When MessageReceivedAsync is called, it's passed an IAwaitable<IMessageActivity>. To get the message,
             *  await the result. */
             var message = await result;
@@ -31,6 +32,7 @@ namespace Microsoft.Bot.Sample.QnABot
             // QnA Subscription Key and KnowledgeBase Id null verification
             if (!string.IsNullOrEmpty(qnaSubscriptionKey) && !string.IsNullOrEmpty(qnaKBId))
             {
+                //在这里解决特殊的问题,如果不是的话转到qna解决
                 await context.Forward(new BasicQnAMakerDialog(), AfterAnswerAsync, message, CancellationToken.None);
             }
             else
@@ -47,7 +49,6 @@ namespace Microsoft.Bot.Sample.QnABot
         }
     }
 
-    // For more information about this template visit http://aka.ms/azurebots-csharp-qnamaker
     [Serializable]
     public class BasicQnAMakerDialog : QnAMakerDialog
     {
