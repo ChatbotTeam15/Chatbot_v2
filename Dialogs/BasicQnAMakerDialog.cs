@@ -62,7 +62,6 @@ namespace Microsoft.Bot.Sample.QnABot
         // Go to https://qnamaker.ai and feed data, train & publish your QnA Knowledgebase.        
         // Parameters to QnAMakerService are:
         // Required: subscriptionKey, knowledgebaseId, 
-        // Optional: defaultMessage, scoreThreshold[Range 0.0 – 1.0]
         public BasicQnAMakerDialog() : base(new QnAMakerService(new QnAMakerAttribute(Utils.GetAppSetting("QnASubscriptionKey"), Utils.GetAppSetting("QnAKnowledgebaseId"), "Sorry, I don't understand that.", 0.5)))
         {}
     }
