@@ -1,3 +1,5 @@
-language: C#
+language: csharp
+solution: solution-name.sln
+
 install: true
 script: true
