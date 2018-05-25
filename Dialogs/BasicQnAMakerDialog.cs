@@ -45,6 +45,7 @@ namespace Microsoft.Bot.Sample.QnABot
             }
             else
             {
+                //database connection error message
                 await context.PostAsync("QnA database connect fail, please try to contact Administrator");
             }
 
